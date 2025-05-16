@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redirecting...</title>
+  <style>
+    body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #333;
+    }
+    #continue-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #continue-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Please wait while we prepare your content...</h1>
+  <button id="continue-btn" onclick="redirect()">Continue</button>
+
+  <script>
+    function redirect() {
+      window.location.href = "https://popcash.net/world/go/489377/738925/";
+    }
+
+    setTimeout(() => {
+      document.getElementById('continue-btn').style.display = 'inline-block';
+    }, 5000);
+  </script>
+</body>
+</html>
