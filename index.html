@@ -1,75 +1,96 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Win Cash Online</title>
+  <meta charset="UTF-8">
+  <title>Claim Your Gift</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      margin: 0;
-      padding: 0;
+      background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+      color: white;
       font-family: Arial, sans-serif;
-      background: url('https://i.imgur.com/RHppKeN.jpg') no-repeat center center fixed;
-      background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      text-align: center;
+      padding: 50px 20px;
     }
     .container {
-      background-color: rgba(255, 255, 255, 0.9);
-      border-radius: 12px;
+      background: rgba(0, 0, 0, 0.3);
       padding: 40px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
+      border-radius: 20px;
+      display: inline-block;
+      max-width: 400px;
     }
     h1 {
-      color: #2c3e50;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
     }
     #countdown {
-      font-size: 32px;
-      color: #e74c3c;
+      font-size: 1.5em;
       margin: 20px 0;
     }
-    #continue-btn {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 18px;
-      background-color: #27ae60;
+    #claim-btn {
+      font-size: 1.2em;
+      padding: 15px 30px;
+      background-color: #ff9800;
       color: white;
       border: none;
-      border-radius: 5px;
-      text-decoration: none;
+      border-radius: 10px;
       cursor: pointer;
+      display: none;
     }
-    #continue-btn:hover {
-      background-color: #219150;
+    #claim-btn:hover {
+      background-color: #e68900;
+    }
+    .notification {
+      background: rgba(255,255,255,0.2);
+      padding: 10px;
+      margin-top: 30px;
+      border-radius: 10px;
+      font-size: 0.95em;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
     }
   </style>
 </head>
-<body><div class="container">
-  <h1>Win Cash Today!</h1>
-  <p>We are preparing your chance to earn real money online. Get ready...</p>
-  <div id="countdown">10</div>
-  <a id="continue-btn" href="https://popcash.net/world/go/489377/738925/" style="display:none;" target="_blank">Click to Win</a>
-</div><script>
-  let countdown = 10;
-  const countdownEl = document.getElementById("countdown");
-  const button = document.getElementById("continue-btn");
+<body>
+  <div class="container">
+    <h1>🎉 Congratulations!</h1>
+    <p>You have 1 exclusive gift waiting for you.</p>
+    <div id="countdown">Please wait... 5</div>
+    <button id="claim-btn" onclick="window.location.href='https://doctoredits.com/1812446'">Click to Claim</button>
+    <div class="notification">🎁 Someone from Algeria just won an iPhone!</div>
+  </div>
 
-  const interval = setInterval(() => {
-    countdown--;
-    countdownEl.textContent = countdown;
-    if (countdown <= 0) {
-      clearInterval(interval);
-      countdownEl.style.display = "none";
-      button.style.display = "inline-block";
-    }
-  }, 1000);
-</script><!-- PopCash Code --><script type="text/javascript">
-  var uid = "489377";
-  var pop_fallback = "on";
-  var pop_tag = document.createElement("script");
-  pop_tag.src = "https://c1.popcash.net/pop.js";
-  document.head.appendChild(pop_tag);
-</script></body>
+  <!-- Countdown Script -->
+  <script>
+    let seconds = 5;
+    let countdownEl = document.getElementById("countdown");
+    let buttonEl = document.getElementById("claim-btn");
+
+    let timer = setInterval(() => {
+      seconds--;
+      countdownEl.textContent = "Please wait... " + seconds;
+      if (seconds <= 0) {
+        clearInterval(timer);
+        countdownEl.style.display = "none";
+        buttonEl.style.display = "inline-block";
+      }
+    }, 1000);
+  </script>
+
+  <!-- PopCash Code -->
+  <script type="text/javascript">
+    var uid = '489377';
+    var wid = '738925';
+    var pop_fback = '1';
+  </script>
+  <script type="text/javascript" src="https://cdn.popcash.net/pop.js"></script>
+</body>
 </html>
