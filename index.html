@@ -18,28 +18,16 @@
     }
     h1 { font-size: 2.5em; margin-bottom: 0.3em; }
     p { font-size: 1.2em; margin-bottom: 1em; }
-    button {
-      padding: 15px 30px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 10px;
-      background-color: #ffd700;
-      color: #000;
-      cursor: pointer;
-    }
-    button:hover { background-color: #ffa500; }
   </style>
 </head>
 <body>
   <h1>🎯 Spin the Wheel!</h1>
-  <p>You have 1 chance to win a surprise. Click below to spin.</p>
-  <button onclick="spinWheel()">Spin Now</button>
+  <p>Spinning... Please wait.</p>
 
   <script>
-    function spinWheel() {
-      alert("🎉 Congratulations! You won!");
+    setTimeout(function() {
       window.location.href = "https://popcash.net/world/go/489377/738925/";
-    }
+    }, 1000); // 1000 milliseconds = 1 second
   </script>
 </body>
 </html>
