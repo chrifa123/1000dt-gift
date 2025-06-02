@@ -1,83 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Congratulations!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin & Win</title>
   <style>
     body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #1e3c72, #2a5298);
-      color: white;
+      background: #1e1e2f;
+      color: #fff;
       font-family: Arial, sans-serif;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.5em;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 1em;
-    }
-
-    #countdown {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    #winButton {
+    h1 { font-size: 2.5em; margin-bottom: 0.3em; }
+    p { font-size: 1.2em; margin-bottom: 1em; }
+    button {
       padding: 15px 30px;
-      font-size: 1.3em;
-      background-color: #ffcc00;
-      color: #000;
+      font-size: 1.2em;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
+      background-color: #ffd700;
+      color: #000;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
-
-    #winButton:hover {
-      background-color: #ff9900;
-    }
+    button:hover { background-color: #ffa500; }
   </style>
 </head>
 <body>
-
-  <h1>🎉 You’ve Been Selected!</h1>
-  <p>Complete the countdown and click the button below to claim your surprise reward.</p>
-
-  <div id="countdown">10</div>
-
-  <button id="winButton" disabled>Click to Win</button>
+  <h1>🎯 Spin the Wheel!</h1>
+  <p>You have 1 chance to win a surprise. Click below to spin.</p>
+  <button onclick="spinWheel()">Spin Now</button>
 
   <script>
-    let counter = 10;
-    const countdownEl = document.getElementById("countdown");
-    const button = document.getElementById("winButton");
-
-    const interval = setInterval(() => {
-      counter--;
-      countdownEl.textContent = counter;
-      if (counter === 0) {
-        clearInterval(interval);
-        button.disabled = false;
-        button.textContent = "Click to Win!";
-      }
-    }, 1000);
-
-    button.addEventListener("click", () => {
+    function spinWheel() {
+      alert("🎉 Congratulations! You won!");
       window.location.href = "https://popcash.net/world/go/489377/738925/";
-    });
+    }
   </script>
-
 </body>
 </html>
