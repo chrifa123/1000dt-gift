@@ -1,96 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Claim Your Gift</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Congratulations!</title>
   <style>
     body {
-      background: linear-gradient(to bottom right, #4facfe, #00f2fe);
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
     }
-    .container {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 40px;
-      border-radius: 20px;
-      display: inline-block;
-      max-width: 400px;
-    }
+
     h1 {
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
     }
+
     p {
       font-size: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    #countdown {
+      font-size: 2em;
+      font-weight: bold;
       margin-bottom: 20px;
     }
-    #countdown {
-      font-size: 1.5em;
-      margin: 20px 0;
-    }
-    #claim-btn {
-      font-size: 1.2em;
+
+    #winButton {
       padding: 15px 30px;
-      background-color: #ff9800;
-      color: white;
+      font-size: 1.3em;
+      background-color: #ffcc00;
+      color: #000;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      display: none;
+      transition: background 0.3s ease;
     }
-    #claim-btn:hover {
-      background-color: #e68900;
-    }
-    .notification {
-      background: rgba(255,255,255,0.2);
-      padding: 10px;
-      margin-top: 30px;
-      border-radius: 10px;
-      font-size: 0.95em;
-      animation: blink 1s infinite;
-    }
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.6; }
-      100% { opacity: 1; }
+
+    #winButton:hover {
+      background-color: #ff9900;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🎉 Congratulations!</h1>
-    <p>You have 1 exclusive gift waiting for you.</p>
-    <div id="countdown">Please wait... 5</div>
-    <button id="claim-btn" onclick="window.location.href='https://doctoredits.com/1812446'">Click to Claim</button>
-    <div class="notification">🎁 Someone from Algeria just won an iPhone!</div>
-  </div>
 
-  <!-- Countdown Script -->
+  <h1>🎉 You’ve Been Selected!</h1>
+  <p>Complete the countdown and click the button below to claim your surprise reward.</p>
+
+  <div id="countdown">10</div>
+
+  <button id="winButton" disabled>Click to Win</button>
+
   <script>
-    let seconds = 5;
-    let countdownEl = document.getElementById("countdown");
-    let buttonEl = document.getElementById("claim-btn");
+    let counter = 10;
+    const countdownEl = document.getElementById("countdown");
+    const button = document.getElementById("winButton");
 
-    let timer = setInterval(() => {
-      seconds--;
-      countdownEl.textContent = "Please wait... " + seconds;
-      if (seconds <= 0) {
-        clearInterval(timer);
-        countdownEl.style.display = "none";
-        buttonEl.style.display = "inline-block";
+    const interval = setInterval(() => {
+      counter--;
+      countdownEl.textContent = counter;
+      if (counter === 0) {
+        clearInterval(interval);
+        button.disabled = false;
+        button.textContent = "Click to Win!";
       }
     }, 1000);
+
+    button.addEventListener("click", () => {
+      window.location.href = "https://popcash.net/world/go/489377/738925/";
+    });
   </script>
 
-  <!-- PopCash Code -->
-  <script type="text/javascript">
-    var uid = '489377';
-    var wid = '738925';
-    var pop_fback = '1';
-  </script>
-  <script type="text/javascript" src="https://cdn.popcash.net/pop.js"></script>
 </body>
 </html>
