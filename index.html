@@ -1,71 +1,71 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>إشعار النظام - جائزة 1000 دينار</title>
-  <meta property="og:title" content="إشعار النظام: ربحت 1000 دينار!" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إشعار iPhone - جائزة 1000 دينار</title>
+  <meta property="og:title" content="إشعار iPhone: ربحت 1000 دينار!" />
   <meta property="og:description" content="اضغط الآن لتأكيد واستلام الجائزة." />
   <meta property="og:image" content="https://i.imgur.com/3JQ6Z4N.png" />
   <style>
     body {
+      background-color: #f0f0f5;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Tahoma, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       height: 100vh;
     }
-    .notification {
-      background-color: #ffffff;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-      border-radius: 12px;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
+    .ios-alert {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
       text-align: center;
+      width: 90%;
+      max-width: 350px;
     }
-    .notification h2 {
+    .ios-alert h2 {
+      color: #007aff;
       font-size: 22px;
       margin-bottom: 10px;
-      color: #388e3c;
     }
-    .notification p {
+    .ios-alert p {
       font-size: 16px;
       color: #333;
     }
     .countdown {
-      font-weight: bold;
-      color: #d32f2f;
       margin: 15px 0;
+      font-size: 18px;
+      color: #ff3b30;
     }
     .btn {
-      display: inline-block;
-      background-color: #1976d2;
+      background-color: #007aff;
       color: white;
       padding: 12px 25px;
       font-size: 16px;
-      border-radius: 8px;
+      border-radius: 12px;
       text-decoration: none;
-      margin-top: 15px;
+      display: inline-block;
+      margin-top: 10px;
     }
     .btn:hover {
-      background-color: #1565c0;
+      background-color: #005bb5;
     }
   </style>
 </head>
 <body>
-  <div class="notification">
-    <h2>📱 إشعار النظام</h2>
+  <div class="ios-alert">
+    <h2>🔔 إشعار iPhone</h2>
     <p>🎉 مبروك! لقد ربحت <strong>1000 دينار تونسي</strong>!</p>
     <p class="countdown" id="countdown">جارٍ التحقق... 5</p>
     <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791">استلام الجائزة الآن</a>
   </div>
 
   <audio autoplay>
-    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f56b9f61f5.mp3?filename=notification-132141.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/30/audio_82eaa6be5b.mp3?filename=iphone-notification-13472.mp3" type="audio/mp3">
   </audio>
 
   <script>
